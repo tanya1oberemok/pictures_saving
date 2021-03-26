@@ -37,6 +37,7 @@
                         <img src="{{ asset('/posts/' . $post->image) }}" class="card-img-top" alt="{{$post->title}}">
                         <div class="card-body">
                             <p class="card-text" style="width: 10rem;">{{$post->title}}</p>
+                            <p class="card-text" style="width: 10rem;">Created by {{$post->users->first_name}} {{$post->users->last_name}}</p>
                             <div class="d-flex flex-row">
                                 <a href="{{ url('show-post', $post->id) }}" class="btn btn-outline-success mr-5">Edit</a>
                                 <form action="{{ route('delete-post', $post->id) }}" method="POST">
